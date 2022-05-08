@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 // DDBB
-// require('./config/mongoose.config')
+require('./config/mongoose.config')
 
 // Debug
 require('./config/debug.config')
