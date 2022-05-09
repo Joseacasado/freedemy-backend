@@ -1,5 +1,6 @@
 const User = require('../database/models/user.model')
 const { getUserIdFromToken } = require('../services/auth.service')
+const ApiResponseHandler = require('../api/apiResponseHandler')
 
 
 /**
@@ -35,6 +36,6 @@ module.exports = async function tokenMiddleware(req, res, next) {
         return next()
     } catch (error) {
         console.error(error)
-        res.status(500).send(error.message)
+        return await ApiResponseHandler.error(res, { code: 500, message: error.message })
     }
 }

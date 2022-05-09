@@ -1,9 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const ApiResponseHandler = require('../apiResponseHandler')
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     console.log(req.currentUser)
-    res.json({ message: 'Jose\'s routres playground.' })
+    const payload = { message: 'Jose\'s routres playground.' }
+
+    return await ApiResponseHandler.success(res, payload)
 })
 
 module.exports = router
