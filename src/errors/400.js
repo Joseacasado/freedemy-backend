@@ -1,7 +1,9 @@
 class Error400 extends Error {
     constructor(language, errorMsg) {
-        message = errorMsg || 'Bad request.'
-        code = 400
+        const message = errorMsg || 'Bad request.'
+
+        super(message)
+        this.code = 400
     }
 }
 
