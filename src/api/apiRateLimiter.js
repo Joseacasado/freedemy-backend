@@ -8,22 +8,22 @@ function createRateLimiter({ windowMs, max, message}) {
         windowMs,
         max,
         message,
-        standardHeaders: true,          // Return rate limit info in the `RateLimit-*` headers
         requestPropertyName: appName    // The name of the property on the Express request object to store the rate limit info.
     })
 }
 
-const defaultRateLimiter = createRateLimiter({
+const rateLimiter = createRateLimiter({
     windowMs: 15 * 60 * 1000,       // 15 minutes (in milliseconds)
-    max: 500,                       // Limit each IP to 500 requests per `window` (here, per 15 minutes)
+    max: 100,                       // Limit each IP to N requests per `window` (here, per 15 minutes)
     message: 'Too Many Requests.',
 })
-
-module.exports = defaultRateLimiter
 
 //  TO-DO 
 //  export createRateLimiter as default
 //  export defaultRateLimiter as constant
+
+module.exports = rateLimiter
+
 
 /*
  *  If you are behind a proxy/load balancer (usually the case with most hosting services, e.g. Heroku, Bluemix, AWS ELB, Nginx, Cloudflare, 
