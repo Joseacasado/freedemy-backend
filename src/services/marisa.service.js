@@ -17,5 +17,16 @@ module.exports = {
         logger.error(`${__filename} Error in createPlaylist: ${e}`);
         return e;
       }
-    }
+    },
+    getPlaylistById: async (req, res) => {
+      logger.info(`${__filename} Starting getPlaylistById; `);
+      try {
+        const response = await Schedule.findById(req.params.id);
+        logger.info(`${__filename} getPlaylistById successfully; param: ${req.params.id}`);
+        return response
+      } catch (e) {
+        logger.error(`${__filename} Error in getPlaylistById: ${e}`);
+        return e;
+      }
+    },
 }

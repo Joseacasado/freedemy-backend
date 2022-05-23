@@ -10,6 +10,14 @@ const MarisaController = {
       return await ApiResponseHandler.error(res, error);
     }
   },
+  getPlaylistById: async (req, res) => {
+    try {
+      const foundPlaylist = MarisaService.getPlaylistById(req);
+      return await ApiResponseHandler.success(res, foundPlaylist);
+    } catch (error) {
+      return await ApiResponseHandler.error(res, error);
+    }
+  },
 };
 
 module.exports = MarisaController;
