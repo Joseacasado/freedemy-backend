@@ -1,3 +1,5 @@
+[![Deployment Pipeline](https://github.com/Joseacasado/freedemy-backend/actions/workflows/pipeline.yml/badge.svg?branch=main)](https://github.com/Joseacasado/freedemy-backend/actions/workflows/pipeline.yml)
+
 ## Freedemy 2.0
 
 Ironhack Web Development Bootcamp 9th week project: MERN Stack SPA e-learning platform Backend refactor & upgrade.
