@@ -10,7 +10,7 @@ app.set('port', port)
 
 // Normalize a port into a number, string, or false
 
-function normalizePort(val) {
+function normalizePort (val) {
   const port = parseInt(val, 10)
 
   if (isNaN(port)) {
@@ -28,11 +28,11 @@ function normalizePort(val) {
 
 // Send error messages
 
-app.use((req, res, next) => res.status(404).json({ message: 'Not found' }))
+app.use((req, res) => res.status(404).json({ message: 'Not found' }))
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   console.error('ERROR', req.method, req.path, err)
-  
+
   // only render if the error ocurred before sending the response
   if (!res.headersSent) res.status(500).json({ message: 'Server error' })
 })
@@ -49,18 +49,18 @@ server.on('error', error => {
     : `Port ${port}`
 
   switch (error.code) {
-    case 'EACCES':
-      console.error(`${bind} requires elevated privileges`)
-      process.exit(1)
-      break;
-    case 'EADDRINUSE':
-      console.error(`${bind} is already in use`);
-      process.exit(1)
-      break;
-    default:
-      throw error
+  case 'EACCES':
+    console.error(`${bind} requires elevated privileges`)
+    process.exit(1)
+    break
+  case 'EADDRINUSE':
+    console.error(`${bind} is already in use`)
+    process.exit(1)
+    break
+  default:
+    throw error
   }
-});
+})
 
 server.listen(port, () => {
   const addr = server.address()
