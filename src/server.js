@@ -17,5 +17,4 @@ require('./config/middleware.config')(app)
 // Routes index
 require('./api/routes')(app)
 
-
 module.exports = app
