@@ -1,17 +1,17 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const ScheduleSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
-      unique: true,
+      unique: true
     },
     description: {
       type: String,
-      required: false,
-    },
+      required: false
+    }
     // tags: {
     //   type: [String],
     //   required: false,
@@ -66,10 +66,10 @@ const ScheduleSchema = new Schema(
   },
   {
     timestamps: {
-      createdAt: "created",
-      updatedAt: "updated",
-    },
+      createdAt: 'created',
+      updatedAt: 'updated'
+    }
   }
-);
+)
 
-module.exports = mongoose.model("Schedule", ScheduleSchema);
+module.exports = mongoose.model('Schedule', ScheduleSchema)
