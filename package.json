@@ -4,11 +4,11 @@
   "description": "Freedemy 2.0 App Backend",
   "main": "server.js",
   "scripts": {
-    "dev": "DEBUG=freedemy2-backend:* nodemon ./src/bin/www",
-    "start": "cross-env NODE_ENV=production node ./src/bin/www",
+    "dev": "cross-env NODE_ENV=development DEBUG=freedemy2-backend:* nodemon ./src/bin/www",
+    "start": "node ./src/bin/www",
     "lint": "eslint .",
-    "db:seed-dev": "node ./src/database/seed",
-    "db:seed-prod": "cross-env NODE_ENV=production node ./src/database/seed"
+    "db:seed-dev": "cross-env NODE_ENV=development node ./src/database/seed",
+    "db:seed-prod": "node ./src/database/seed"
   },
   "author": "Jose A. Casado & Marisa Vitale",
   "license": "ISC",
