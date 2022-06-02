@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const Course = require('../models/course.model')
 
 const connectionString = process.env.NODE_ENV === 'production'
-  ? process.env.DB_REMOTE
-  : process.env.DB_LOCAL
+  ? process.env.DB_REMOTE_PROD
+  : process.env.DB_REMOTE_DEV
 
 mongoose.connect(connectionString)
 
