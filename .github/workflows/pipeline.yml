@@ -14,12 +14,12 @@ jobs:
         uses: styfle/cancel-workflow-action@0.9.1
 
       - name: ⬇️ Checkout repo
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: ⎔ Setup Node
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: 16
 
@@ -28,6 +28,7 @@ jobs:
 
       - name: 🔍 Lint
         run: npm run lint
+
   deploy:
     name: 🚀 Deploy
     runs-on: ubuntu-18.04
@@ -37,7 +38,7 @@ jobs:
         uses: styfle/cancel-workflow-action@0.9.1
 
       - name: ⬇️ Checkout repo
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
