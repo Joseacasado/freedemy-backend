@@ -1,21 +1,51 @@
-name: Deployment Pipeline
+name: 🚀 Deploy
 
 on: 
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request: {}
 
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  setup:
+    name: ⚙️ Setup
+    runs-on: ubuntu-latest
     steps:
+      - name: 🛑 Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: ⬇️ Checkout repo
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: ⎔ Setup Node
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install dependencies
-        run: npm install
-      - name: Lint
+
+      - name: 📥 Download deps
+        uses: bahmutov/npm-install@v1
+
+      - name: 🔍 Lint
         run: npm run lint
+  deploy:
+    name: 🚀 Deploy
+    runs-on: ubuntu-18.04
+    needs: [setup]
+    steps:
+      - name: 🛑 Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: ⬇️ Checkout repo
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: 🚀 Deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          #healthcheck: "https://${{secrets.HEROKU_APP}}/health"
+          rollbackonhealthcheckfailed: true
