@@ -3,7 +3,6 @@ name: 🚀 Deploy
 on: 
   push:
     branches: [main]
-  pull_request: {}
 
 jobs:
   setup:
@@ -12,6 +11,8 @@ jobs:
     steps:
       - name: 🛑 Cancel previous runs
         uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{github.token}}
 
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
@@ -36,6 +37,8 @@ jobs:
     steps:
       - name: 🛑 Cancel previous runs
         uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{github.token}}
 
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
@@ -48,5 +51,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
-          #healthcheck: "https://${{secrets.HEROKU_APP}}/health"
-          rollbackonhealthcheckfailed: true
+          #healthcheck: "https://${{secrets.HEROKU_APP}}.herokuapp.com/health"
+          #rollbackonhealthcheckfailed: true
