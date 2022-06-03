@@ -7,13 +7,15 @@ Ironhack Web Development Bootcamp 9th week project: MERN Stack SPA e-learning pl
 ## TO-DO
 
 #### Marisa
+
 - logger => winston https://www.npmjs.com/package/winston
 - Swagger => endpoints
 - JoiValidator
 
 #### Jose
+
 - Iniciar proyecto y github repos.
-- Github actions 
+- Github actions
 - JWT
 
 Traducciones errores
