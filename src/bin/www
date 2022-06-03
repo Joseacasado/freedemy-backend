@@ -5,7 +5,7 @@ const debug = require('debug')('server:server')
 const http = require('http')
 
 // Get port from environment and store in Express
-const port = normalizePort(process.env.NODE_ENV === 'production' ? process.env.PORT_PROD : process.env.PORT_DEV)
+const port = normalizePort(process.env.NODE_ENV === 'production' ? process.env.PORT : process.env.PORT_DEV)
 app.set('port', port)
 
 // Normalize a port into a number, string, or false
