@@ -10,7 +10,7 @@ const MarisaController = {
       return await ApiResponseHandler.error(res, error)
     }
   },
-  updatePlaylist:  async (req, res) => {
+  updatePlaylist: async (req, res) => {
     try {
       const updatedPlaylist = await MarisaService.updatePlaylist(req)
       return await ApiResponseHandler.success(res, updatedPlaylist)
@@ -24,7 +24,7 @@ const MarisaController = {
       return await ApiResponseHandler.success(res, foundPlaylist)
     } catch (error) {
       return await ApiResponseHandler.error(res, error)
-    } 
+    }
   }
 }
 
