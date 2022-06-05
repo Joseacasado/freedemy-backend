@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
+const ApiController = require('../controllers/api.controller')
 
-router.get('/', (req, res) => res.json({ message: 'Freedemy 2.0 API root endpoint.' }))
+router.get('/', ApiController.sendRootMessage)
+router.get('/health', ApiController.sendApiStatus)
+router.get('/version', ApiController.sendApiVersion)
 
 module.exports = router

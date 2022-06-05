@@ -5,7 +5,7 @@ const debug = require('debug')('server:server')
 const http = require('http')
 
 // Get port from environment and store in Express
-const port = normalizePort(process.env.NODE_ENV === 'production' ? process.env.PORT_PROD : process.env.PORT_DEV)
+const port = normalizePort(process.env.NODE_ENV === 'production' ? process.env.PORT : process.env.PORT_DEV)
 app.set('port', port)
 
 // Normalize a port into a number, string, or false
@@ -49,16 +49,16 @@ server.on('error', error => {
     : `Port ${port}`
 
   switch (error.code) {
-  case 'EACCES':
-    console.error(`${bind} requires elevated privileges`)
-    process.exit(1)
-    break
-  case 'EADDRINUSE':
-    console.error(`${bind} is already in use`)
-    process.exit(1)
-    break
-  default:
-    throw error
+    case 'EACCES':
+      console.error(`${bind} requires elevated privileges`)
+      process.exit(1)
+      break
+    case 'EADDRINUSE':
+      console.error(`${bind} is already in use`)
+      process.exit(1)
+      break
+    default:
+      throw error
   }
 })
 

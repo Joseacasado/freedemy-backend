@@ -4,11 +4,11 @@
   "description": "Freedemy 2.0 App Backend",
   "main": "server.js",
   "scripts": {
-    "dev": "DEBUG=freedemy2-backend:* nodemon ./src/bin/www",
-    "start": "cross-env NODE_ENV=production node ./src/bin/www",
+    "dev": "cross-env NODE_ENV=development DEBUG=freedemy2-backend:* nodemon ./src/bin/www",
+    "start": "node ./src/bin/www",
     "lint": "eslint .",
-    "db:seed-dev": "node ./src/database/seed",
-    "db:seed-prod": "cross-env NODE_ENV=production node ./src/database/seed"
+    "db:seed-dev": "cross-env NODE_ENV=development node ./src/database/seed",
+    "db:seed-prod": "node ./src/database/seed"
   },
   "author": "Jose A. Casado & Marisa Vitale",
   "license": "ISC",
@@ -32,7 +32,7 @@
     "morgan": "1.10.0",
     "short-unique-id": "4.4.4",
     "soap": "0.31.0",
-    "swagger-jsdoc": "^6.2.1",
+    "swagger-jsdoc": "6.2.1",
     "swagger-ui-express": "2.0.11",
     "uuid": "3.3.2",
     "winston": "3.3.3"
