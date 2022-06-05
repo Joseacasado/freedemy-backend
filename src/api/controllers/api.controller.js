@@ -28,6 +28,15 @@ const ApiController = {
     } catch (error) {
       return await ApiResponseHandler.error(res, error)
     }
+  },
+  sendApiIP: async (req, res) => {
+    try {
+      const payload = { ip: req.ip }
+
+      return await ApiResponseHandler.success(res, payload)
+    } catch (error) {
+      return await ApiResponseHandler.error(res, error)
+    }
   }
 }
 
