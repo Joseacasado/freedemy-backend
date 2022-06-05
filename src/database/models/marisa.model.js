@@ -14,29 +14,29 @@ const ScheduleSchema = new Schema(
     },
     tags: {
       type: [String],
-      required: false,
+      required: false
     },
     loop: {
       type: Boolean,
       default: false,
-      required: true,
+      required: true
     },
     events: [
       {
         _id: {
           type: String,
-          required: true,
+          required: true
         },
         startDate: {
           type: Date,
-          required: true,
+          required: true
         },
         endDate: {
           type: Date,
-          required: true,
-        },
-      },
-    ],
+          required: true
+        }
+      }
+    ]
   },
   {
     timestamps: {
