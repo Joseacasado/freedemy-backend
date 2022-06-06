@@ -12,6 +12,7 @@
 [![Pipeline][pipeline-shield]][pipeline-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
+[![License][license-shield]][license-url]
 
 
 
