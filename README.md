@@ -218,19 +218,19 @@ Project Link: [https://github.com/Joseacasado/freedemy-backend](https://github.c
 [pipeline-shield]: https://github.com/Joseacasado/freedemy-backend/actions/workflows/pipeline.yml/badge.svg?branch=main
 [pipeline-url]: https://github.com/Joseacasado/freedemy-backend/actions/workflows/pipeline.yml
 
-[forks-shield]: https://img.shields.io/github/forks/Joseacasado/freedemy-backend.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/Joseacasado/freedemy-backend.svg
 [forks-url]: https://github.com/Joseacasado/freedemy-backend/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/Joseacasado/freedemy-backend.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/Joseacasado/freedemy-backend.svg
 [stars-url]: https://github.com/Joseacasado/freedemy-backend/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/Joseacasado/freedemy-backend.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/Joseacasado/freedemy-backend.svg
 [issues-url]: https://github.com/Joseacasado/freedemy-backend/issues
 
-[license-shield]: https://img.shields.io/github/license/Joseacasado/freedemy-backend.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/Joseacasado/freedemy-backend.svg
 [license-url]: https://github.com/Joseacasado/freedemy-backend/blob/master/LICENSE.txt
 
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg
 [linkedin-url-marisa]: https://linkedin.com/in/marisa-vitale/
 [linkedin-url-jose]: https://linkedin.com/in/joseantonio-casado/
 
