@@ -15,19 +15,19 @@ const options = {
         description: 'Authorization information is missing or invalid.'
       }
 
-    },
-    securityDefinitions: {
-      access_token: {
-        type: 'apiKey',
-        name: 'x-access-token',
-        in: 'header'
-      }
-    },
-    security: [
-      {
-        access_token: []
-      }
-    ]
+    }
+    // securityDefinitions: {
+    //   access_token: {
+    //     type: 'apiKey',
+    //     name: 'x-access-token',
+    //     in: 'header'
+    //   }
+    // },
+    // security: [
+    //   {
+    //     access_token: []
+    //   }
+    // ]
   },
 
   apis: ['./api/routes/*.js'] // Path to the API docs
@@ -39,7 +39,7 @@ module.exports = {
   init: (app) => {
     const swaggerSpec = swaggerJSDoc(options)
 
-    app.get('/api-docs.json', (req, res) => {
+    app.get('/api-doc.json', (req, res) => {
       res.setHeader('Content-Type', 'application/json')
       res.send(swaggerSpec)
     })
