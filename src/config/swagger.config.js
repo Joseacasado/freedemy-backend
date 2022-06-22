@@ -10,5 +10,5 @@ module.exports = app => {
     explorer: true
   }
 
-  app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerUiOptions))
+  app.use('/api/documentation', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerUiOptions))
 }
